@@ -24,9 +24,8 @@ public class Launcher {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream()
                 .sorted(Comparator.comparingInt((entry) -> {
-                    return Math.toIntExact(entry.getValue());
-                }))
-                .limit(3);
+                    return -Math.toIntExact(entry.getValue());
+                })).limit(3);
 
         map.forEach((elem) -> {
             System.out.print(elem.getKey());
