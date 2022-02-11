@@ -17,7 +17,7 @@ public class Launcher {
     }
 
     public static void freq(String file) {
-        file = file.toLowerCase().replaceAll("[^a-z^\n]", "");
+        file = file.toLowerCase().replaceAll("[^a-z^\n^ ]", "");
         String[] array = file.split("[ \n]");
         Stream<String> stream = Arrays.stream(array);
         Stream<Map.Entry<String, Long>> map = stream
